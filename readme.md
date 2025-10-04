@@ -1,32 +1,31 @@
-# Projekt 3 – Autoencoder / VAE: Redukcja wymiarowości i generowanie danych
+# Project 3 – Autoencoder / VAE: Dimensionality Reduction and Data Generation
 
-Projekt 3 dotyczy autoenkoderów i wariacyjnych autoenkoderów, których zadaniem jest redukcja wymiarowości oraz generowanie danych. Celem projektu jest zbudowanie klasycznego autoenkodera do kompresji i rekonstrukcji obrazów oraz wariacyjnego autoenkodera do generowania nowych przykładów. Dane wykorzystywane w projekcie pochodzą ze zbiorów MNIST i Fashion-MNIST, które zawierają odpowiednio obrazy cyfr oraz ubrań w rozdzielczości 28 na 28 pikseli. Oba zbiory są dostępne w bibliotekach Keras i TorchVision.
+Project 3 focuses on autoencoders and variational autoencoders, which are used for dimensionality reduction and data generation. The goal of the project is to build a classical autoencoder for image compression and reconstruction, as well as a variational autoencoder for generating new examples. The data used in the project comes from the MNIST and Fashion-MNIST datasets, which contain images of digits and clothing items, respectively, with a resolution of 28 by 28 pixels. Both datasets are available in the Keras and TorchVision libraries.
 
-W ramach projektu należy zaimplementować klasyczny autoenkoder i ocenić jakość jego rekonstrukcji. Następnie należy przeprowadzić redukcję wymiarowości i wizualizację przestrzeni latentnej przy użyciu metod PCA lub t-SNE. Kolejnym etapem jest implementacja wariacyjnego autoenkodera i generacja nowych obrazów. Ostatecznym krokiem jest porównanie klasycznego autoenkodera i wariacyjnego autoenkodera pod względem jakości rekonstrukcji oraz zdolności generacyjnych.
+The project involves implementing a classical autoencoder and evaluating the quality of its reconstructions. Next, dimensionality reduction and visualization of the latent space should be performed using PCA or t-SNE. The following step is to implement a variational autoencoder and generate new images. The final step is to compare the classical autoencoder and the variational autoencoder in terms of reconstruction quality and generative capabilities.
 
-W projekcie można wykorzystać różne zbiory danych. Podstawowymi są MNIST i Fashion-MNIST. Alternatywnie można użyć zbiorów CIFAR-10 lub CIFAR-100 zawierających kolorowe obrazy, zbioru CelebA zawierającego zdjęcia twarzy, a także zbiorów medycznych MedMNIST v2 lub HAM10000. Wybór zbioru zależy od celu eksperymentu, a różne zestawy danych pozwalają przetestować działanie modeli w zróżnicowanych warunkach.
+Various datasets can be used in the project. The primary datasets are MNIST and Fashion-MNIST. Alternatively, CIFAR-10 or CIFAR-100 datasets containing color images, the CelebA dataset containing celebrity face images, or medical datasets such as MedMNIST v2 or HAM10000 can be used. The choice of dataset depends on the experimental goal, and different datasets allow testing the models under diverse conditions.
 
+# Report 1 – Data Preparation
 
-# Raport 1 – Przygotowanie danych
+## Objective
+To show how the dataset was prepared for training the Autoencoder (AE) and Variational Autoencoder (VAE).
 
-## Cel
-Pokazać, jak przygotowano zbiór danych do trenowania Autoenkodera (AE) i Wariacyjnego Autoenkodera (VAE).
+## Report Content
 
-## Zawartość raportu
+- **Dataset Description**  
+  Datasets: MNIST / Fashion-MNIST  
+  Number of classes: 10  
+  Number of images: dataset-dependent (e.g., 60,000 training images, 10,000 test images)
 
-- **Opis datasetu**  
-  Zbiory danych: MNIST / Fashion-MNIST  
-  Liczba klas: 10  
-  Liczba obrazów: zależna od zbioru (np. 60 000 obrazów treningowych, 10 000 testowych)
+- **Data Normalization**  
+  Data should be normalized to the range 0–1.
 
-- **Normalizacja danych**  
-  Dane należy znormalizować do zakresu 0–1.
-
-- **Schemat podziału**  
-  Podział danych na zbiory:
+- **Data Split Scheme**  
+  Data should be split into:
     - Train
     - Validation
     - Test
 
-- **Przykładowe obrazy z datasetu**  
-  Kilka wierszy obrazów cyfr lub ubrań w celu wizualnej prezentacji danych.
+- **Sample Images from the Dataset**  
+  A few rows of digit or clothing images for visual presentation of the data.
