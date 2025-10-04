@@ -3,7 +3,8 @@ name = "autoencoder-vae-mnist"
 version = "0.1.0"
 description = "Autoencoder and Variational Autoencoder for FashionMNIST"
 authors = [
-    { name = "Twoje Imię", email = "twoj.email@example.com" }
+    { name = "Mateusz Sidor" },
+    { name = "Marta Konieczna" },
 ]
 readme = "README.md"
 requires-python = ">=3.13"
@@ -17,7 +18,9 @@ dependencies = [
     "seaborn>=0.13.0",
     "scikit-learn>=1.4.0",
     "tqdm>=4.66.0",
-    "jupyter>=1.0.0"
+    "jupyter>=1.0.0",
+    "ruff==0.13.3",
+    "mypy==1.18.2",
 ]
 
 [tool.jupyter]
