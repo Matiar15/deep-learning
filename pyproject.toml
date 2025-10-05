@@ -21,6 +21,7 @@ dependencies = [
     "jupyter>=1.0.0",
     "ruff==0.13.3",
     "mypy==1.18.2",
+    "pydantic==2.11.10",
 ]
 
 [tool.jupyter]
