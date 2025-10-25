@@ -13,9 +13,9 @@ def test_model_on(model, dataloader, criterion, device) -> float:
             outputs = model(noisy_images)
 
             # Flatten target images to match the output shape
-            images_flat = images.view(images.size(0), -1)
+            # images_flat = images.view(images.size(0), -1)
 
-            curr_loss = criterion(outputs, images_flat)
+            curr_loss = criterion(outputs, images)
 
             # Accumulate loss properly weighted by batch size
             total_loss += curr_loss.item() * images.size(0)

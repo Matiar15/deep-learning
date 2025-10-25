@@ -12,9 +12,9 @@ def train_loop(model, train_loader, optimizer, criterion, device):
         outputs = model(noisy_images)
 
         # Flatten target images to match the output shape
-        images_flat = images.view(images.size(0), -1)
+        # images_flat = images.view(images.size(0), -1)
 
-        curr_loss = criterion(outputs, images_flat)
+        curr_loss = criterion(outputs, images)
 
         curr_loss.backward()
         optimizer.step()
@@ -24,7 +24,7 @@ def train_loop(model, train_loader, optimizer, criterion, device):
 
         if idx == 0:
             original_image = images[0]
-            reconstructed_image = outputs[0].view(original_image.size())
+            reconstructed_image = outputs[0] # .view(original_image.size())
 
     avg_loss = total_loss / total_samples
 
