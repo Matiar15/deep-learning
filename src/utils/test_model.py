@@ -25,6 +25,7 @@ def ae_test_model_on(model, dataloader, criterion, device) -> float:
 
         return avg_loss
 
+
 def vae_test_model_on(model, dataloader, criterion, device) -> float:
     model.eval()
     total_loss = 0.0
@@ -48,4 +49,3 @@ def vae_test_model_on(model, dataloader, criterion, device) -> float:
         avg_loss = total_loss / total_samples
 
         return avg_loss
-

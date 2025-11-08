@@ -33,6 +33,7 @@ def train_loop_ae(model, train_loader, optimizer, criterion, device):
 
     return avg_loss, original_image, reconstructed_image
 
+
 def train_loop_vae(model, train_loader, optimizer, criterion, device):
     model.train()
     total_loss = 0.0
