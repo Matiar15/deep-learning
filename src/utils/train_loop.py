@@ -24,7 +24,7 @@ def train_loop(model, train_loader, optimizer, criterion, device):
 
         if idx == 0:
             original_image = images[0]
-            reconstructed_image = outputs[0] # .view(original_image.size())
+            reconstructed_image = outputs[0]  # .view(original_image.size())
 
     avg_loss = total_loss / total_samples
 
