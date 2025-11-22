@@ -5,6 +5,7 @@ import torch.nn as nn
 class VAEAutoencoder(nn.Module):
     def __init__(self, latent_dim=2):
         super().__init__()
+        self.latent_dim = latent_dim
 
         self.encoder = nn.Sequential(
             nn.Conv2d(1, 16, kernel_size=3, padding=1),
