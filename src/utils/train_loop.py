@@ -40,6 +40,9 @@ def train_loop_vae(model, train_loader, optimizer, criterion, device, **kwargs):
     total_samples = 0
     original_image = None
     reconstructed_image = None
+    epoch = kwargs.get("epoch", 0)
+    max_beta = kwargs.get("max_beta", 1.0)
+
 
     for idx, (images, noisy_images, _) in enumerate(train_loader):
         images, noisy_images = images.to(device), noisy_images.to(device)
@@ -49,7 +52,8 @@ def train_loop_vae(model, train_loader, optimizer, criterion, device, **kwargs):
 
         kl_divergence = -0.5 * torch.mean(torch.sum(1 + log_var - mean.pow(2) - log_var.exp(), dim=1))
         recon_loss = criterion(outputs, images)
-        curr_loss = recon_loss + (kwargs["beta"] or 0.0) * kl_divergence
+        current_beta = min(max_beta, max_beta * (epoch / 5))
+        curr_loss = recon_loss + current_beta * kl_divergence
 
         curr_loss.backward()
         optimizer.step()
