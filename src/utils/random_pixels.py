@@ -27,6 +27,7 @@ class RandomPixels(object):
 
         return noisy_tensor
 
+
 def add_random_pixels(seed: int, image: np.ndarray, noise_ratio: float = 0.1):
     np.random.seed(seed)
     noisy_image = image.copy()
